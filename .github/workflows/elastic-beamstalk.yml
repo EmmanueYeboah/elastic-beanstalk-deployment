@@ -5,8 +5,8 @@ on:
       - main
 
 env:
-  AWS_APP_NAME: test  
-  AWS_ENV_NAME: test-env
+  AWS_APP_NAME: car-rentals-app 
+  AWS_ENV_NAME: Car-rentals-app-env
 
 jobs:
   deploy:
@@ -25,7 +25,8 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Zip application files
-        run: zip -r application.zip .
+        run: |
+          zip -r application.zip . -x "*.git*" -x "*.github*" -x "application.zip"
 
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v22
