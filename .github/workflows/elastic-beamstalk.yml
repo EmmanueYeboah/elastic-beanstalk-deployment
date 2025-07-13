@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_APP_NAME: car-rentals-app 
-  AWS_ENV_NAME: Car-rentals-app-env
+  AWS_ENV_NAME: Car-rentals-app-env-1
 
 jobs:
   deploy:
